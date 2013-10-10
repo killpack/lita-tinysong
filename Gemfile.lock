@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     lita-tinysong (1.0.0)
-      lita (~> 2.5)
+      lita (> 2.0)
 
 GEM
   remote: https://rubygems.org/
