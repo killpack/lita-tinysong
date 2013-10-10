@@ -24,4 +24,4 @@ end
 
 `killpack`: `Lita: groove me let the music play`
 
-`Lita`: `http:\/\/tinysong.com\/XtWt`
+`Lita`: `http://tinysong.com/XtWt`

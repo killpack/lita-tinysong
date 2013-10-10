@@ -15,13 +15,13 @@ module Lita
           return
         end
 
-        query = response.matches[0][2].gsub(/\s+/, "+")
-        result = http.get("http://tinysong.com/a/#{query}", format: 'json', key: Lita.config.handlers.tinysong.api_key).body
+        query = response.matches[0][2]
+        result = http.get("http://tinysong.com/a/#{query.gsub(/\s+/, "+")}", format: 'json', key: Lita.config.handlers.tinysong.api_key).body
 
         if result == "[]" 
           response.reply "I couldn't find any results for '#{query}'!"
         else
-          response.reply result
+          response.reply result.gsub(/"/, '').gsub(/\\/, '')
         end
       end
 

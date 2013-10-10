@@ -23,7 +23,7 @@ describe Lita::Handlers::Tinysong, lita_handler: true do
         end
         it "replies with a link to the song" do
           send_command("groove gut feeling")
-          expect(replies.last).to include("http:\/\/tinysong.com\/gHQJ")
+          expect(replies.last).to include("http://tinysong.com/gHQJ")
         end
       end
 
