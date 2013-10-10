@@ -22,7 +22,7 @@ describe Lita::Handlers::Tinysong, lita_handler: true do
           allow_any_instance_of(Faraday::Connection).to receive(:get).and_return(double("Faraday::Response", status: 200, body: body))
         end
         it "replies with a link to the song" do
-          send_command("groove me gut feeling")
+          send_command("groove gut feeling")
           expect(replies.last).to include("http:\/\/tinysong.com\/gHQJ")
         end
       end
