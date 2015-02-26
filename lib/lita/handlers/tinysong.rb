@@ -16,7 +16,7 @@ module Lita
         query = response.matches[0][2]
         result = http.get("http://tinysong.com/a/#{query.gsub(/\s+/, "+")}", format: 'json', key: Lita.config.handlers.tinysong.api_key).body
 
-        if result == "[]" 
+        if result == "[]"
           response.reply "I couldn't find any results for '#{query}'!"
         else
           response.reply result.gsub(/"/, '').gsub(/\\/, '')
@@ -24,7 +24,8 @@ module Lita
       end
 
     end
+
     Lita.register_handler(Tinysong)
   end
 end
-    
+
