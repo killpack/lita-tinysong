@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "lita-tinysong"
-  spec.version       = "1.0.0"
+  spec.version       = "2.0.0"
   spec.authors       = ["Jordan Killpack"]
   spec.email         = ["jordan.killpack@gatech.edu"]
   spec.description   = "Tinysong Lita handler"
@@ -20,4 +20,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.0"
 end
-    
+
