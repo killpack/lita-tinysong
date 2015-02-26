@@ -5,7 +5,7 @@ Lita respond with [Tinysong](http://tinysong.com) links.
 
 ## Installation
 ```ruby
-gem 'lita-tinysong', github: 'killpack/lita-tinysong'
+gem 'lita-tinysong'
 ```
 
 ## Configuration
