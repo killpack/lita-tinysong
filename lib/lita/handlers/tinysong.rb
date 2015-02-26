@@ -3,11 +3,9 @@ module Lita
   module Handlers
     class Tinysong < Handler
 
-      route(/(groove)( me)? (.*)/i, :groove, command: true, help: { "groove (me) SONG" => "Returns a Tinysong url for SONG" })
+      config :api_key
 
-      def self.default_config(config)
-        config.api_key = nil
-      end
+      route(/(groove)( me)? (.*)/i, :groove, command: true, help: { "groove (me) SONG" => "Returns a Tinysong url for SONG" })
 
       def groove(response)
         unless Lita.config.handlers.tinysong.api_key

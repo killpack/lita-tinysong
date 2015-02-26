@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Lita::Handlers::Tinysong, lita_handler: true do
-  it { routes_command("groove me the final countdown").to :groove }
-  it { routes_command("groove last night a dj saved my life").to :groove }
+  it { is_expected.to route_command("groove me the final countdown").to :groove }
+  it { is_expected.to route_command("groove last night a dj saved my life").to :groove }
 
   describe "#groove" do
     context "when no API key is set" do
