@@ -3,11 +3,9 @@ module Lita
   module Handlers
     class Tinysong < Handler
 
-      route(/(groove)( me)? (.*)/i, :groove, command: true, help: { "groove (me) SONG" => "Returns a Tinysong url for SONG" })
+      config :api_key
 
-      def self.default_config(config)
-        config.api_key = nil
-      end
+      route(/(groove)( me)? (.*)/i, :groove, command: true, help: { "groove (me) SONG" => "Returns a Tinysong url for SONG" })
 
       def groove(response)
         unless Lita.config.handlers.tinysong.api_key
@@ -18,7 +16,7 @@ module Lita
         query = response.matches[0][2]
         result = http.get("http://tinysong.com/a/#{query.gsub(/\s+/, "+")}", format: 'json', key: Lita.config.handlers.tinysong.api_key).body
 
-        if result == "[]" 
+        if result == "[]"
           response.reply "I couldn't find any results for '#{query}'!"
         else
           response.reply result.gsub(/"/, '').gsub(/\\/, '')
@@ -26,7 +24,8 @@ module Lita
       end
 
     end
+
     Lita.register_handler(Tinysong)
   end
 end
-    
+
